@@ -28,7 +28,14 @@ $(function() {
 			});
 			//Add a note after clicking on the button:
     		$columnAddCard.click(function() {
-        	self.addCard(new Card(prompt("Enter the name of the card")));
+				
+			var cardName=prompt("Enter the name of the card");
+			if (cardName=='') {
+			alert("The name of card is empty. Enter the name of the card");
+			}
+			else{
+        	self.addCard(new Card(cardName));
+			}
     		});
     		
     		// CONSTRUCTION COLUMN ELEMENT
@@ -121,6 +128,7 @@ $(function() {
 	// DODAWANIE KART DO KOLUMN
 	todoColumn.addCard(card1);
 	doingColumn.addCard(card2);
+	//console.log(text(self.Description));
 
 		
 })
